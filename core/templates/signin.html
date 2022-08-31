@@ -1,0 +1,43 @@
+{% load static %}
+<link rel='stylesheet' href="{% static 'css/style_core.css' %}"/>
+
+<body>
+    <div class='container'>
+        <div class='title'>Logowanie</div>
+        <div>
+
+            <style>
+                h5{
+                    color: red;
+                }
+            </style>
+
+        {% for message in messages %}
+        <h5>{{message}}</h5>
+        {% endfor %}
+        </div>
+        <form method='POST' enctype="application/x-www-form-urlencoded">
+            {% csrf_token %}
+            <div class='user-details' id='login'>
+                <div class='input-box'>
+                    <span>Nazwa użytkownika</span>
+                    <input class='details' type='text' name='username' placeholder='Nazwa użytkownika'>
+            </div>
+                <div class='input-box'>
+                    <span>Hasło</span>
+                    <input class='details' type='password' name='password1' placeholder='Hasło'>
+            </div>
+                <div class="button">
+                    <input type="submit" value="Logowanie">
+                </div>
+            </div>
+        </form>
+        <div class='button-link'><a href='https://fakturyproject.mateuszpotocki2.repl.co/signup/'>Rejestracja</div>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+<script src="{% static 'js/script_core.js' %}"></script>
+
+
+    
